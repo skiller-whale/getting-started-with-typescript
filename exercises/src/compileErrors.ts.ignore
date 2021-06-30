@@ -1,0 +1,14 @@
+const output: string;
+output = 'Compile error fixed';
+
+const errorTypes: number[] = 'syntax spelling arguments'.split(' ');
+
+errorTypes = errorTypes.concat(["types", "reassignment"]);
+
+function formatOutput(errorTypes: object[]) {
+  for (let i = 0; i < errorTypes.length; i++) {
+    console.log(`${output}: ${errorTypes[i]}!`);
+  }
+}
+
+formatOuput(errorTypes, 4);

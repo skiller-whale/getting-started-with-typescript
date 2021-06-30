@@ -1,0 +1,13 @@
+version: '3.8'
+services:
+  intro:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    profiles:
+      - intro
+    volumes:
+      - ./attendance_id:/exercises/attendance_id
+      - ./exercises:/exercises
+    stdin_open: true
+    tty: true

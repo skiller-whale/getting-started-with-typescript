@@ -1,0 +1,6 @@
+node_modules
+exercises/attendance_id
+exercises/tsconfig.json
+exercises/package*.json
+exercises/typescript.js
+exercises/dist

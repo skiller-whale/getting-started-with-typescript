@@ -1,0 +1,5 @@
+#!/bin/sh
+
+# Uses profile to distiguish from other possible service groups
+docker-compose --profile intro down
+docker-compose --profile intro up --build

@@ -4,10 +4,8 @@ services:
     build:
       context: .
       dockerfile: Dockerfile
-    profiles:
-      - intro
     volumes:
-      - ./attendance_id:/exercises/attendance_id
-      - ./exercises:/exercises
+      - ./attendance_id:/session/attendance_id
+      - ./exercises:/session/exercises
     stdin_open: true
     tty: true

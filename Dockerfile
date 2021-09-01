@@ -3,16 +3,13 @@ FROM node:16-alpine
 RUN apk add --no-cache python3 \
   py3-pip
 
-# We could upgrade npm to latest here, which will avoid any
-# upgrade notices while using the npm command
-#
-# npm install -g npm
-RUN mkdir /scripts
+RUN npm install -g npm
+RUN mkdir /session
 
 COPY ./docker/sync /opt/skillerwhale_sync/
 COPY ./docker/lib /opt/skillerwhale_sync/lib
 
-WORKDIR /exercises
+WORKDIR /session/exercises
 
 ENV PATH="$PATH:/opt/skillerwhale_sync"
 

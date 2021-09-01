@@ -1,4 +1,4 @@
-USER_ID_FILEPATH = './attendance_id'
+USER_ID_FILEPATH = '/session/attendance_id'
 
 
 def read_attendance_id():

@@ -36,7 +36,10 @@ def skiller_whale_sync():
     sync_thread.start()
 
     with OUTPUT_LOCK:
-        print("Ready to go!")
+        print("Open a separate terminal window, and run the command below")
+        print("to open a new shell inside the docker container:")
+        print("    docker-compose exec intro sh")
+        print("")
         print("(You can use Ctrl-c to end this session)")
 
 

@@ -3,7 +3,11 @@ output = 'Compile error fixed';
 
 const errorTypes: number[] = 'syntax spelling arguments'.split(' ');
 
-errorTypes = errorTypes.concat(["types", "reassignment"]);
+// This line of code does not need any changes
+const extraErrors = ["types", "reassignment"];
+
+// Assume that this reassignment of errorTypes is necessary
+errorTypes = errorTypes.concat(extraErrors);
 
 function formatOutput(errorTypes: object[]) {
   for (let i = 0; i < errorTypes.length; i++) {

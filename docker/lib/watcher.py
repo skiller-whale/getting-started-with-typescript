@@ -5,7 +5,7 @@ import time
 
 
 IGNORE_DIRS = [".git", "node_modules"]
-WATCHED_EXTS = [".ts", ".js", ".json"]
+WATCHED_EXTS = ["ts", "js", "json", "command_history"]
 
 
 class Watcher:
@@ -26,7 +26,13 @@ class Watcher:
             return hashlib.md5(contents).hexdigest()
 
     def _respond_to_file_change(self, path):
-        _, extension = os.path.splitext(path)
+        # Include files like '.command_history', that start with a period
+        try:
+            _, extension = path.rsplit('.', 1)
+        except ValueError: # No '.' present in the path.
+            print('error', path)
+            return
+
         if extension not in WATCHED_EXTS:
             return
 
@@ -71,5 +77,3 @@ class Watcher:
                 self._first_pass = False
 
             time.sleep(wait_time)  # Poll for changes every `wait_time` seconds
-
-

@@ -30,7 +30,6 @@ class Watcher:
         try:
             _, extension = path.rsplit('.', 1)
         except ValueError: # No '.' present in the path.
-            print('error', path)
             return
 
         if extension not in WATCHED_EXTS:
